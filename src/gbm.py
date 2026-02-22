@@ -1,5 +1,5 @@
 import numpy as np
-from config import S0, K, r, sigma, T, n_paths, seed
+from .config import S0, r, sigma, T, n_paths, seed
 
 def monte_carlo():
 
@@ -9,10 +9,6 @@ def monte_carlo():
 
     rng = np.random.default_rng(seed)
     Z = rng.standard_normal(n_paths)
-    S_T = S0*np.exp(r -0.5*sigma**2)*T + sigma*np.sqrt(T)*Z
+    S_T = S0 * np.exp((r - 0.5 * sigma**2) * T + sigma * np.sqrt(T) * Z)
 
-    print(S_T)
-    
     return S_T
-
-monte_carlo()

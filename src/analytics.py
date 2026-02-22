@@ -1,5 +1,5 @@
 import numpy as np
-from config import S0, K, T, sigma, r
+from .config import S0, K, T, sigma, r
 from scipy.stats import norm
 
 def BSM():
